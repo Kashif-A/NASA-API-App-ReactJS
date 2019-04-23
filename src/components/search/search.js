@@ -2,18 +2,32 @@ import React, { Component } from "react";
 import "./search.css";
 import SearchResults from "../searchResults/searchResults";
 
+// Save state to allow preservation of state
+let state = { value: "", items: [] };
+
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      value: "",
-      items: []
-    };
+    this.state = state;
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toSearch = this.toSearch.bind(this);
     this.toResult = this.toResult.bind(this);
+  }
+
+  // Stop auto rendering
+  shouldComponentUpdate() {
+    if (this.state.items.length > 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  // Preserve state
+  componentWillUnmount() {
+    state = this.state;
   }
 
   // Store user input as they are entering it
@@ -28,6 +42,13 @@ class Search extends Component {
       .then(res => res.json())
       .then(
         result => {
+          if (!result.collection.items.length) {
+            document.getElementById("errorMessage").innerHTML =
+              "No results found...";
+            setTimeout(() => {
+              document.getElementById("errorMessage").innerHTML = "";
+            }, 3000);
+          }
           this.setState({
             items: result.collection.items
           });
@@ -42,21 +63,25 @@ class Search extends Component {
       );
   }
 
-  // If API sends results then render SearchResult, else keep asking for search
+  // If there are results, then show then, else ask for search. If user clicks 'Home', it resets the state
   render() {
     return this.state.items.length ? this.toResult() : this.toSearch();
   }
 
-  // Return form to allow user to search
+  // Return form to allow user to query the API
   toSearch() {
     return (
       <div className="searchForm text-center">
         <form onSubmit={this.handleSubmit}>
           <div class="form-group">
             <label htmlFor="searchInput">
-              Enter solar system related query here...!
+              {" "}
+              <h4> Enter query...! </h4>{" "}
             </label>
+            <br />
+            <div id="errorMessage" /> <br />
             <input
+              required
               type="text"
               value={this.state.value}
               onChange={this.handleChange}
@@ -65,8 +90,9 @@ class Search extends Component {
               aria-describedby="emailHelp"
             />
           </div>
-          <button type="submit" class="btn btn-info">
-            Submit
+          <button type="submit" class="btn btn-danger">
+            {" "}
+            Submit{" "}
           </button>
         </form>
       </div>

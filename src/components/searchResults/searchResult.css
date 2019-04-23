@@ -1,43 +1,31 @@
-.listItem {
-  color: black;
-  margin-top: 1em;
-  border-bottom: rgb(247, 77, 105) 1px solid;
-  padding-bottom: 2em;
-}
-
-.dataHolder {
-  padding: 20px;
-}
-
-.dataHolderTitle {
-  color: white;
-  padding-bottom: 1em;
-}
-
-.listItemParagraph {
-  font-size: 12px;
-  color: white;
-}
-
-.listItemHeading {
-  font-size: 16px;
-  color: white;
+.container {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .NASAImage {
-  width: 35%;
-  height: 45%;
-  display: block;
-  margin: auto;
-  padding-top: 15px;
+  position: relative;
+  float: left;
+  width: 9em;
+  height: 12em;
+  margin: 17px;
+  border: 2px solid red;
+  -webkit-transition: width 1.5s; /* Safari */
+  transition: width 1.5s;
+  border-radius: 50%;
 }
 
-.itemInfo {
-  padding-left: 2em;
-  padding-right: 2em;
+.NASAImage:hover {
+  width: 11em;
+  border: 3px solid white;
+  cursor: pointer;
+  -webkit-transition: width 1.5s; /* Safari */
+  transition: width 1.5s;
 }
 
-.row {
-  margin: 0px;
-  padding: 0px;
+.btnNotMain {
+  width: 100%;
+  margin-bottom: 2em;
 }
