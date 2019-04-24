@@ -1,40 +1,39 @@
 .listItem {
-    color: black;
-    border-bottom: rgb(247, 77, 105) 1px solid;
-    padding-bottom: 2em;
-  }
-  
-  .dataHolderTitle {
-    color: white;
-    padding-bottom: 1em;
-  }
-  
-  .listItemParagraph {
-    font-size: 13px;
-    color: white;
-  }
-  
-  .listItemHeading {
-    font-size: 16px;
-    color: white;
-  }
-  
-  .NASAImageDetailed {
-    width: 40%;
-    height: 50%;
-    display: block;
-    margin: auto;
-    padding-top: 3px;
-    filter: brightness(1.3);
-  }
-  
-  .itemInfo {
-    padding-left: 2em;
-    padding-right: 2em;
-  }
-  
-  .btnNotMain {
-    width: 100%;
-    margin-bottom: 2em;
-  }
-  
+  color: black;
+  border-bottom: rgb(247, 77, 105) 1px solid;
+  padding-bottom: 2em;
+}
+
+.dataHolderTitle {
+  color: white;
+  padding-bottom: 1em;
+}
+
+.itemParagraph {
+  font-size: 13px;
+  color: white;
+}
+
+.itemHeading {
+  font-size: 16px;
+  color: white;
+}
+
+.NASAImageDetailed {
+  width: 40%;
+  height: 50%;
+  display: block;
+  margin: auto;
+  padding-top: 3px;
+  filter: brightness(1.3);
+}
+
+.itemInfo {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.btnNotMain {
+  width: 100%;
+  margin-bottom: 2em;
+}
