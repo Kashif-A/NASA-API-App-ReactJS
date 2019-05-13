@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.NASAApiImage {
+  width: 11em;
+  height: 12em;
+  margin: 15px;
+  border: 2px solid red;
+  -webkit-transition: width 130ms; /* Safari */
+  transition: width 130ms;
+  border-radius: 50%;
+}
+
+.NASAApiImage:hover {
+  width: 12em;
+  border: 4px solid white;
+  cursor: pointer;
+  -webkit-transition: width 130ms; /* Safari */
+  transition: width 130ms;
+}
+
+.itemContainer {
+  float: left;
+  width: 13.8em;
+  height: 20em;
+  color: white;
+  padding: 1em;
+}
+
+.itemContainer p {
+  font-size: 0.7em;
+}
+
+#pageNumbers {
+  list-style: none;
+  display: flex;
+}
+
+#pageNumbers > li {
+  background-color: black;
+  color: white;
+  user-select: none;
+  cursor: pointer;
+  padding: 0.7em;
+  margin: 0.5em;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+#itemsHolder {
+  width: "100%";
+}
+
+#pageNumbersWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
